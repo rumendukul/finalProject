@@ -1,20 +1,38 @@
 
-# Playwright
+# Dependencies
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
-.gitignore
-/package-lock.json
-/package.json
-/playwright.config.ts
-/.env
-/cucumber-reports
-/.vscode
-/.github
-/cucumber.js
-/playwright.config.ts
-/tsconfig.json
+
+# Environment variables
+.env
+
+# Reports
+playwright-report/
+blob-report/
+cucumber-reports/
+test-results/
+
+# Playwright auth/cache
+.playwright/
+playwright/.cache/
+.playwright/.auth/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Build/output
+dist/
+build/
+
+# TypeScript cache
+*.tsbuildinfo
 
