@@ -1,4 +1,5 @@
 import { APIRequestContext, APIResponse, expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
 
 interface LoginParams {
     request: APIRequestContext;
@@ -52,5 +53,21 @@ export class APIClients {
 
         return response;
     }
+}
+
+export function createPatientBody() {
+    return {
+        "first_name": faker.person.firstName(),
+        "last_name": faker.person.lastName(),
+        "dob": faker.date.birthdate({ min: 18, max: 110, mode: 'age' }).toISOString().split('T')[0],
+        "gender": faker.helpers.arrayElement(['Male', 'Female']),
+        "phone": faker.phone.number(),
+        "email": faker.internet.email(),
+        "address": faker.location.streetAddress(),
+        "emergency_contact_name": faker.person.fullName(),
+        "emergency_contact_phone": faker.phone.number(),
+        "insurance_provider": faker.company.name(),
+        "insurance_policy_number": faker.string.alphanumeric(10).toUpperCase()
+    };
 }
             

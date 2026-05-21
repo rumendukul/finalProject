@@ -24,6 +24,7 @@ npm-debug.log*
 .DS_Store
 
 # IDE
+
 .vscode/*
 !.vscode/settings.json
 !.vscode/launch.json

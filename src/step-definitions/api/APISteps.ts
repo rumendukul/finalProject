@@ -1,6 +1,7 @@
 import { Given, When, Then, Before } from '@cucumber/cucumber';
 import { APIClients } from '../../api/clients/APIClients';
 import { request, expect } from '@playwright/test';
+import { createPatientBody } from '../../api/clients/APIClients';
 
 const apiClient = new APIClients();
 
@@ -27,12 +28,16 @@ Then('verify status code is {int}', function (expectedStatusCode) {
     expect(this.response.status()).toBe(expectedStatusCode);
 });
 
-When('user hits POST {string} with body', async function (endpoint, docString) {
+When('user hits POST {string} with body', async function (endpoint) {
+    const patientBody = createPatientBody();
+
+    console.log(patientBody);
+
     this.response = await apiClient.postRequest(
         { request: this.request },
         endpoint,
         this.token,
-        JSON.parse(docString),
+        patientBody
     );
 });
        
