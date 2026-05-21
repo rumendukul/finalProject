@@ -6,3 +6,15 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+.gitignore
+/package-lock.json
+/package.json
+/playwright.config.ts
+/.env
+/cucumber-reports
+/.vscode
+/.github
+/cucumber.js
+/playwright.config.ts
+/tsconfig.json
+
